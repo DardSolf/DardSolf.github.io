@@ -6,45 +6,54 @@
     <title>Portfolio</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            padding: 0;
             font-family: 'Arial', sans-serif;
-            transition: background 0.5s ease;
-        }
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.5s ease, box-shadow 0.5s ease;
-            width: 80%;
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 2.5em;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            background-color: #f4f4f4;
             color: #333;
-            margin-bottom: 20px;
-            transition: color 0.5s ease;
         }
         .dark-mode body {
             background-color: #070F2B;
+            color: #9290C3;
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: #1B1A55;
+            color: #fff;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.5s ease;
+        }
+        .dark-mode header {
+            background-color: #1B1A55;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.5s ease, box-shadow 0.5s ease;
         }
         .dark-mode .container {
-            background: rgba(50, 50, 50, 0.9);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+            background: #1B1A55;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            transition: color 0.5s ease;
         }
         .dark-mode h1 {
             color: #9290C3;
         }
         .dark-mode-button {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             padding: 10px 20px;
@@ -53,20 +62,19 @@
             border-radius: 5px;
             cursor: pointer;
             background-color: #333;
-            color: #ffd700;
+            color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .dark-mode .dark-mode-button {
             background-color: #9290C3;
-            color: #333;
+            color: #1B1A55;
         }
         .portfolio-section {
             margin-bottom: 20px;
         }
         .portfolio-section h2 {
             font-size: 2em;
-            color: #666;
             margin-bottom: 15px;
             transition: color 0.5s ease;
         }
@@ -84,8 +92,8 @@
             transition: background 0.5s ease, box-shadow 0.5s ease;
         }
         .dark-mode .portfolio-item {
-            background: #333;
-            box-shadow: 0 2px 4px rgba(255, 215, 0, 0.2);
+            background: #535C91;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
         }
         .portfolio-item img {
             max-width: 100%;
@@ -93,18 +101,19 @@
         }
         .portfolio-item p {
             margin-top: 15px;
-            color: #666;
             transition: color 0.5s ease;
         }
         .dark-mode .portfolio-item p {
-            color: #bf8013;
+            color: #9290C3;
         }
     </style>
 </head>
 <body>
     <button class="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
-    <div class="container">
+    <header>
         <h1>Mon Portfolio</h1>
+    </header>
+    <div class="container">
         <div class="portfolio-section">
             <h2>Projets</h2>
             <div class="portfolio-item">

@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Portfolio</title>
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            min-height: 100vh;
             margin: 0;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
+            background-color: #f4f4f4;
             font-family: 'Arial', sans-serif;
             transition: background 0.5s ease;
         }
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 50px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: background 0.5s ease, box-shadow 0.5s ease;
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 20px;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #333;
+            margin-bottom: 20px;
             transition: color 0.5s ease;
         }
         .dark-mode body {
-            background: linear-gradient(to right, #000000, #434343);
+            background-color: #1a1a1a;
         }
         .dark-mode .container {
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            background: rgba(50, 50, 50, 0.9);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
         }
         .dark-mode h1 {
-            color: #fff;
+            color: #ffd700;
         }
         .dark-mode-button {
             position: absolute;
@@ -47,21 +52,74 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: #fff;
-            color: #333;
+            background-color: #333;
+            color: #ffd700;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .dark-mode .dark-mode-button {
-            background-color: #333;
-            color: #fff;
+            background-color: #ffd700;
+            color: #333;
+        }
+        .portfolio-section {
+            margin-bottom: 20px;
+        }
+        .portfolio-section h2 {
+            font-size: 2em;
+            color: #666;
+            margin-bottom: 15px;
+            transition: color 0.5s ease;
+        }
+        .dark-mode .portfolio-section h2 {
+            color: #ffd700;
+        }
+        .portfolio-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.5s ease, box-shadow 0.5s ease;
+        }
+        .dark-mode .portfolio-item {
+            background: #333;
+            box-shadow: 0 2px 4px rgba(255, 215, 0, 0.2);
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .portfolio-item p {
+            margin-top: 15px;
+            color: #666;
+            transition: color 0.5s ease;
+        }
+        .dark-mode .portfolio-item p {
+            color: #ffd700;
         }
     </style>
 </head>
 <body>
     <button class="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
     <div class="container">
-        <h1>Hello World</h1>
+        <h1>Mon Portfolio</h1>
+        <div class="portfolio-section">
+            <h2>Projets</h2>
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Projet 1">
+                <p>Description du projet 1</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Projet 2">
+                <p>Description du projet 2</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project3.jpg" alt="Projet 3">
+                <p>Description du projet 3</p>
+            </div>
+        </div>
     </div>
     <script>
         function toggleDarkMode() {

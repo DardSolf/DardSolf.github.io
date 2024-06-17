@@ -10,7 +10,7 @@
   font-family: "Gnomon";
   src: url("fonts/Gnomon_-Simple.ttf") format("truetype");
   font-style: normal;
-  font-weight: 400; /* Ajustez si nécessaire */
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -18,11 +18,11 @@
   font-family: "Gnomon";
   src: url("fonts/Gnomon_-Web.ttf") format("truetype");
   font-style: normal;
-  font-weight: 400; /* Ajustez si nécessaire */
+  font-weight: 400;
   font-display: swap;
 }
 
-
+/* Thème sombre avec nuances de violet */
 :root {
   --color-background: #1a1a1a; /* Couleur de fond sombre */
   --color-font: #fff; /* Couleur du texte principal */

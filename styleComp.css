@@ -62,9 +62,9 @@ footer {
 /* Style pour le titre principal (noms et prénoms) */
 #hero_firstname,
 #hero_lastname {
-  font-family: 'Gnomon', sans-serif; /* Utilisation de la police Gnomon */
+  font-family: 'Gnomon', sans-serif;
   font-size: 5rem;
-  color: var(--color-extra);
+  color: var(--color-extra); /* Couleur du texte violet */
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease, transform 0.6s ease;

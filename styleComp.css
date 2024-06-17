@@ -1,42 +1,80 @@
-/* Réinitialisation des styles par défaut */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Importation des polices */
+@font-face {
+  font-family: "Rakkas";
+  src: url("fonts/Rakkas-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 
-/* Styles pour le corps de la page */
+@font-face {
+  font-family: "Gnomon";
+  src: url("fonts/Gnomon_-Simple.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gnomon";
+  src: url("fonts/Gnomon_-Web.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Thème sombre avec nuances de violet */
+:root {
+  --color-background: #1a1a1a; /* Couleur de fond sombre */
+  --color-font: #fff; /* Couleur du texte principal */
+  --color-font-secondary: #aaa; /* Couleur du texte secondaire */
+  --color-extra: #b388ff; /* Couleur accentuée (violet) */
+}
+
 body {
+  background-color: var(--color-background);
+  color: var(--color-font);
+  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
 }
 
-/* Styles pour l'en-tête */
 header {
-  background-color: #1a1a1a;
-  text-align: center;
-  padding: 20px 0;
+  background-color: var(--color-background);
+  padding: 10px 0;
 }
 
 header nav ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 header nav ul li {
   display: inline;
-  margin-right: 20px;
+  margin: 0 10px;
 }
 
 header nav ul li a {
+  color: var(--color-font);
   text-decoration: none;
-  color: #fff;
   font-weight: bold;
-  transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
   text-decoration: underline;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Styles pour le titre principal (noms et prénoms) */
@@ -44,7 +82,7 @@ header nav ul li a:hover {
 #hero_lastname {
   font-family: 'Gnomon', sans-serif;
   font-size: 5rem;
-  color: #b388ff;
+  color: var(--color-extra);
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -55,59 +93,23 @@ header nav ul li a:hover {
   margin-top: 10px;
 }
 
-/* Animation pour l'arrivée du titre principal */
+/* Animation pour l'arrivée */
 #home.show-animation #hero_firstname,
 #home.show-animation #hero_lastname {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Styles pour les sections */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* Styles pour la section Compétences */
-#skills {
-  background-color: #1a1a1a;
-  color: #fff;
-}
-
-.skills-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.skill {
-  background-color: #aaa;
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1 1 calc(33% - 40px);
-  box-sizing: border-box;
-}
-
-.skill h3 {
-  margin-top: 0;
-}
-
-/* Styles pour la section Projets */
-#projects {
-  background-color: #1a1a1a;
-  color: #fff;
-}
-
+.skills-content,
 .projects-content {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
 }
 
+.skill,
 .project {
-  background-color: #aaa;
+  background-color: var(--color-font-secondary);
   padding: 20px;
   border-radius: 8px;
   flex: 1 1 calc(33% - 40px);
@@ -116,12 +118,6 @@ section {
 
 .project h3 {
   margin-top: 0;
-}
-
-/* Styles pour la section Contact */
-#contact {
-  background-color: #1a1a1a;
-  color: #fff;
 }
 
 form {
@@ -134,7 +130,8 @@ form label {
   font-weight: bold;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -144,8 +141,8 @@ form button {
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #b388ff;
-  color: #fff;
+  background-color: var(--color-extra);
+  color: var(--color-font);
   font-weight: bold;
   cursor: pointer;
 }
@@ -154,10 +151,8 @@ form button:hover {
   background-color: darkred;
 }
 
-/* Styles pour le pied de page */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #aaa;
-  color: #fff;
+  background-color: var(--color-font-secondary);
 }

@@ -16,15 +16,7 @@
 
 @font-face {
   font-family: "Gnomon";
-  src: url("fonts/Gnomon_-Simple.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gnomon";
-  src: url("fonts/Gnomon_-Web.ttf") format("truetype");
+  src: url("fonts/Coffee\ Fills.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -33,9 +25,13 @@
 /* Dark mode */
 :root {
   --color-background: #1a1a1a; /* Couleur de fond sombre */
-  --color-font: #fff; /* Couleur du texte principal */
-  --color-font-secondary: #aaa; /* Couleur du texte secondaire */
+  --color-font: #E6E6FA; /* Couleur du texte principal */
+  --color-font-secondary: #4B0082; /* Couleur du texte secondaire */
   --color-extra: #b388ff; /* Couleur accentuée (violet) */
+  --rouge1 : #D62828;
+  --bleu1: #003049;
+  --black : #250001;
+  --white1 : #E6E6FA;
 }
 
 body {
@@ -45,6 +41,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 header {
@@ -86,6 +83,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 400px ;
+  margin-bottom: 350px ;
 }
 
 #hero_banner {
@@ -99,6 +98,7 @@ section {
   color: var(--color-extra);
   opacity: 0;
   animation: fadeIn 1s ease forwards;
+  margin-top: 30px;
 }
 
 #hero_lastname {
@@ -108,18 +108,21 @@ section {
 #pres{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   color: var(--color-extra);
   opacity: 0;
   animation: fadeIn 1.5s ease 0.5s forwards;
+  margin: 5em;
+  margin-bottom: 25px;
 }
 
 #txt{
+  text-align: left;
   flex-grow: 1;
   flex-shrink: 1;
+  font-size: 35px;
+  margin-left: 5em;
 }
-
-
 
 .hero-content {
   opacity: 0;
@@ -172,6 +175,12 @@ form label {
   font-weight: bold;
 }
 
+#contact{
+  display: flex;
+  flex-direction: column;
+  padding: 0 25% 50px 25%;
+}
+
 form input,
 form textarea {
   padding: 10px;
@@ -190,7 +199,7 @@ form button {
 }
 
 form button:hover {
-  background-color: darkred;
+  background-color: white;
 }
 
 footer {
@@ -226,4 +235,126 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ajuste la taille de l'image tout en conservant le ratio */
+}
+
+/* Test*/
+
+
+
+
+.highlight{
+  color: var(--color-extra);
+  font-weight: bold;
+}
+
+p, h1, h2, h3, h4, h5, a{
+  color: var(--white1);
+}
+
+a{
+  text-decoration: none;
+}
+
+
+hr{
+  border-color: var(--color-extra);
+}
+
+
+
+
+/*-------------------------------------------------------------------------*/
+/*-------------------------------- article --------------------------------*/
+/*------------------------------ me connaître -----------------------------*/
+
+article{
+  display: flex;
+  margin: 100px 15%;
+  padding: 25px;
+  align-items: center;
+
+  border-radius: 60px;
+}
+
+h3{
+  font-family: 'Rakkas';
+  color: var(--white1);
+  font-size: 55px;
+  margin: 15px;
+  margin-left: 0px;
+}
+
+article p{
+  font-family: 'Rakkas';
+  font-weight: 500;
+  font-size: 27px;
+
+  margin-top: 20px;
+}
+
+/*------------------------------- etudes -------------------------------*/
+
+article li>p{
+  text-align: center;
+  width: 120px;
+  margin: 0;
+}
+
+article li{
+  display: flex;
+  align-items: center;
+  margin: 50px 0px;
+
+}
+
+article li div{
+  font-family: 'Gnomon';
+  margin-left: 50px;
+}
+
+article li hr{
+  margin: 15px 0px;
+  border: 1px solid var(--color-extra);
+}
+
+article li h4{
+  font-size: 25px;
+  width: fit-content;
+}
+
+article li .highlight{
+  font-weight: 450;
+}
+
+article li h5{
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}  
+
+#etudes ul{
+  margin-left: 35px;
+}
+
+#etudes{
+  align-items: center;
+  top: 30px;
+}
+
+#etudes h3{
+  text-align: center;
+}
+
+#test{
+  height: 340px;
+  border-right: 2px solid var(--color-extra);
+}
+
+#txtPresentation{
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+p{
+  font-size: 25px;
 }

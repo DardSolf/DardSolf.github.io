@@ -68,6 +68,28 @@ header nav ul li a:hover {
   text-decoration: underline;
 }
 
+/* Style pour le titre principal (noms et prénoms) */
+#hero_firstname,
+#hero_lastname {
+  font-family: 'Gnomon', sans-serif; /* Utilisation de la police Gnomon définie */
+  font-size: 4rem; /* Taille de police */
+  color: var(--color-extra); /* Couleur du texte (variable définie dans :root) */
+  opacity: 0; /* Opacité initiale pour l'animation */
+  transform: translateY(50px); /* Animation de translation initiale */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#hero_lastname {
+  margin-top: 10px; /* Marge supplémentaire entre le prénom et le nom */
+}
+
+/* Animation pour l'arrivée */
+#home.show-animation #hero_firstname,
+#home.show-animation #hero_lastname {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 section {
   padding: 60px 20px;
 }

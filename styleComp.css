@@ -16,46 +16,25 @@
   font-display: swap;
 }
 
+/* Thème sombre avec nuances de violet */
 :root {
-  --color-font: #fff;
-  --color-font-small: #C0C0C0;
-  --color-font-secondary: #010504;
-  --color-background: #010504;
-  --color-extra: #f24934;
-  --timeAnimation: 0.5s;
-  --font-size_normal: 0.8em;
-  --full-width: calc(100vw - 15px);
-  --title-size-rakkas: 4vw;
-  --title-size-gnomon: 5vw;
-  --z-index-header: 10;
+  --color-background: #1a1a1a; /* Couleur de fond sombre */
+  --color-font: #fff; /* Couleur du texte principal */
+  --color-font-secondary: #aaa; /* Couleur du texte secondaire */
+  --color-extra: #b388ff; /* Couleur accentuée (violet) */
 }
 
 body {
-  margin: 0;
-  font-family: 'Space Mono', monospace;
   background-color: var(--color-background);
   color: var(--color-font);
 }
 
 header {
-  background-color: var(--color-font-secondary);
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: var(--z-index-header);
+  background-color: var(--color-background);
 }
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  margin: 0;
-}
-
-header nav ul li {
-  display: inline;
+header nav ul li a {
+  color: var(--color-font);
 }
 
 header nav ul li a {
@@ -68,12 +47,23 @@ header nav ul li a:hover {
   text-decoration: underline;
 }
 
+
+section {
+  background-color: var(--color-background);
+  color: var(--color-font);
+}
+
+footer {
+  background-color: var(--color-background);
+  color: var(--color-font-secondary);
+}
+
 /* Style pour le titre principal (noms et prénoms) */
 #hero_firstname,
 #hero_lastname {
-  font-family: 'Gnomon', sans-serif; /* Police de caractères Gnomon */
-  font-size: 4rem; /* Taille de la police */
-  color: var(--color-extra); /* Couleur du texte (variable définie dans :root) */
+  font-family: 'Rakkas', cursive; /* Police de caractères Rakkas */
+  font-size: 5rem; /* Taille de la police */
+  color: var(--color-extra); /* Couleur du texte violet */
   opacity: 0; /* Opacité initiale pour l'animation */
   transform: translateY(50px); /* Animation de translation initiale */
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -89,7 +79,6 @@ header nav ul li a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 section {
   padding: 60px 20px;

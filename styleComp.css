@@ -71,8 +71,8 @@ header nav ul li a:hover {
 /* Style pour le titre principal (noms et prénoms) */
 #hero_firstname,
 #hero_lastname {
-  font-family: 'Gnomon', sans-serif; /* Utilisation de la police Gnomon définie */
-  font-size: 4rem; /* Taille de police */
+  font-family: 'Gnomon', sans-serif; /* Police de caractères Gnomon */
+  font-size: 4rem; /* Taille de la police */
   color: var(--color-extra); /* Couleur du texte (variable définie dans :root) */
   opacity: 0; /* Opacité initiale pour l'animation */
   transform: translateY(50px); /* Animation de translation initiale */
@@ -89,6 +89,7 @@ header nav ul li a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 section {
   padding: 60px 20px;

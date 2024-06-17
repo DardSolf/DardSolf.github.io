@@ -35,27 +35,36 @@ body {
   color: var(--color-font);
 }
 
-header .navigation {
+header {
+  width: 100%;
   display: flex;
-  justify-content: center; /* Centrage horizontal des éléments */
+  justify-content: center;
+  background-color: var(--color-background);
+}
+
+.navigation {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
-header .navigation li {
-  margin: 0 10px; /* Marge entre chaque élément de la liste */
+.navigation li {
+  margin: 0 10px;
 }
 
-header .navigation li a {
-  color: var(--color-font); /* Couleur du texte */
+.navigation li a {
+  color: var(--color-font);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease; /* Animation de transition */
+  transition: color 0.3s ease;
 }
 
-header .navigation li a:hover {
-  color: var(--color-extra); /* Couleur du texte au survol */
+.navigation li a:hover {
+  color: var(--color-extra);
 }
+
 
 
 section {

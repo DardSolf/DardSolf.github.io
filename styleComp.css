@@ -94,14 +94,15 @@ footer {
 }
 
 /* Animation pour l'arrivée */
+#hero_firstname,
+#hero_lastname {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 #home.show-animation #hero_firstname,
 #home.show-animation #hero_lastname {
   opacity: 1;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section {
-  padding: 60px 20px;
+  transform: translateY(0);
 }
 
 #home {

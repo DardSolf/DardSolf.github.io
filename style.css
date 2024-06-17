@@ -1,0 +1,229 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font faces */
+@font-face {
+  font-family: "Rakkas";
+  src: url("fonts/Rakkas-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gnomon";
+  src: url("fonts/Gnomon_-Simple.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gnomon";
+  src: url("fonts/Gnomon_-Web.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Dark mode */
+:root {
+  --color-background: #1a1a1a; /* Couleur de fond sombre */
+  --color-font: #fff; /* Couleur du texte principal */
+  --color-font-secondary: #aaa; /* Couleur du texte secondaire */
+  --color-extra: #b388ff; /* Couleur accentuée (violet) */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-font);
+  font-family: 'Gnomon', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  background-color: var(--color-background);
+  padding: 20px 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: var(--color-font);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+section {
+  background-color: var(--color-background);
+  color: var(--color-font);
+  padding: 60px 20px;
+}
+
+#home {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero_banner {
+  text-align: center;
+}
+
+#hero_firstname,
+#hero_lastname {
+  font-family: 'Rakkas', cursive;
+  font-size: 5rem;
+  color: var(--color-extra);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+#hero_lastname {
+  margin: 10px 0;
+}
+
+#pres{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-extra);
+  opacity: 0;
+  animation: fadeIn 1.5s ease 0.5s forwards;
+}
+
+#txt{
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+
+
+.hero-content {
+  opacity: 0;
+  animation: fadeIn 1s ease 0.5s forwards;
+  font-size: 25px;
+}
+
+.separator {
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-extra);
+  margin: 20px auto;
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards;
+}
+
+#hero_text-extra {
+  opacity: 0;
+  animation: fadeIn 1s ease 1.5s forwards;
+}
+
+.skills-content,
+.projects-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px auto;
+}
+
+.skill,
+.project {
+  background-color: var(--color-font-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 calc(33% - 40px);
+  box-sizing: border-box;
+}
+
+.project h3 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-extra);
+  color: var(--color-font);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: darkred;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-font-secondary);
+}
+
+/* Animation pour le titre principal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajout pour la photo */
+#hero_photo {
+  margin-top: 20px;
+  width: 350px; /* Ajustez la largeur selon votre préférence */
+  height: 350px; /* Ajustez la hauteur selon votre préférence */
+  border-radius: 50%; /* Pour un effet de bord arrondi */
+  overflow: hidden; /* Pour cadrer l'image dans le cercle */
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#hero_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajuste la taille de l'image tout en conservant le ratio */
+}

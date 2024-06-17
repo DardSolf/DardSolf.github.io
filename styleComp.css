@@ -8,11 +8,20 @@
 
 @font-face {
   font-family: "Gnomon";
-  src: url("fonts/Gnomon-Foreground.ttf") format("truetype");
+  src: url("fonts/Gnomon_-Simple.ttf") format("truetype");
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400; /* Ajustez si nécessaire */
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Gnomon";
+  src: url("fonts/Gnomon_-Web.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400; /* Ajustez si nécessaire */
+  font-display: swap;
+}
+
 
 /* Thème sombre avec nuances de violet */
 :root {

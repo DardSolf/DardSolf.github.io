@@ -36,19 +36,10 @@ body {
 }
 
 header {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
   background-color: var(--color-background);
-}
-
-header {
-  box-sizing: border-box; /* Modèle de boîte incluant la bordure dans la largeur/hauteur */
-  display: block; /* Affichage en tant que bloc */
-  float: none; /* Pas de flottaison */
-  line-height: normal; /* Hauteur de ligne normale */
-  position: static; /* Position statique (par défaut) */
-  z-index: auto; /* Indice de positionnement automatique */
 }
 
 .navigation {

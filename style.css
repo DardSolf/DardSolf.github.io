@@ -1,0 +1,475 @@
+/* NOUVEAU : Importation des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap');
+
+/* MODIFIÉ : Nouvelle palette de couleurs et polices */
+:root {
+    --primary-color: #00bfff; /* Cyan électrique */
+    --primary-glow: rgba(0, 191, 255, 0.5); /* Lueur associée */
+    --dark-bg: #12181f; /* Fond principal (très sombre, légèrement bleu) */
+    --darker-bg: #1a222c; /* Fond des cartes */
+    --text-color: #e1e1e1; /* Texte clair */
+    --secondary-text-color: #a0a0a0; /* Texte secondaire (plus gris) */
+    --border-color: rgba(255, 255, 255, 0.1); /* Bordure subtile */
+    
+    /* NOUVEAU : Polices modernes */
+    --font-family-headings: 'Poppins', sans-serif;
+    --font-family-body: 'Lato', sans-serif;
+}
+
+/* Styles généraux */
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    background-image: radial-gradient(circle at 10% 20%, rgba(0, 191, 255, 0.1), transparent 50%);
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    filter: brightness(1.2);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* MODIFIÉ : Header "Sticky" plus compact */
+.main-header {
+    background-color: rgba(26, 34, 44, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 0; /* MODIFIÉ : Padding réduit (était 15px) */
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.main-header.scrolled {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 8px 0; /* MODIFIÉ : Un peu plus compact au scroll */
+}
+
+.site-title {
+    margin: 0;
+    font-family: var(--font-family-headings);
+    font-size: 2.0em; /* MODIFIÉ : Taille de police réduite (était 2.2em) */
+    font-weight: 700;
+    background: linear-gradient(90deg, #ffffff, var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.site-subtitle {
+    margin: 2px 0 10px; /* MODIFIÉ : Marges réduites (était 5px 0 15px) */
+    font-family: var(--font-family-body);
+    font-weight: 300;
+    font-size: 1.0em; /* MODIFIÉ : Taille de police réduite (était 1.1em) */
+    color: var(--secondary-text-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    font-family: var(--font-family-headings);
+    font-weight: 400;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+/* Sections générales */
+section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-family-headings);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    display: none; /* On supprime l'ancienne barre */
+}
+
+/* Section "À Propos" */
+.about-section {
+    background: transparent; /* Le fond du body est déjà stylé */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+}
+
+.profile-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-text {
+    flex: 2;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.profile-text p {
+    margin-bottom: 15px;
+    color: var(--light-text-color);
+}
+
+
+/* MODIFIÉ : Accordéon avec effet "Glassmorphism" */
+.competences-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: rgba(26, 34, 44, 0.6); /* Fond semi-transparent */
+    backdrop-filter: blur(10px);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.accordion-header {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 20px 25px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-family: var(--font-family-headings);
+    font-size: 1.6em;
+    color: var(--primary-color);
+}
+
+.accordion-header::after {
+    content: '\f078'; /* Flèche vers le bas */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(180deg);
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+
+.competence-details {
+    padding: 0 25px;
+}
+
+.accordion-header.active + .accordion-panel {
+    padding-bottom: 25px;
+}
+
+.project-tech {
+    font-weight: bold;
+    color: var(--primary-color);
+    filter: brightness(1.1);
+}
+
+/* Section "Projets" avec effet "Glassmorphism" */
+.projects-section {
+    background: transparent;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background-color: rgba(26, 34, 44, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px var(--primary-glow);
+}
+
+.project-item img {
+    width: 100%;
+    height: 180px; /* Hauteur fixe pour les miniatures */
+    object-fit: cover; /* Recadre l'image pour qu'elle remplisse l'espace */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.project-item p {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+/* CORRIGÉ : Ancienne définition du bouton supprimée. On ne garde que celle-ci. */
+.btn-view-project {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary-color), #007bff);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+}
+
+.btn-view-project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.5);
+}
+
+/* MODIFIÉ : Pied de page plus compact */
+.main-footer {
+    background-color: var(--darker-bg);
+    color: var(--secondary-text-color);
+    text-align: center;
+    padding: 0 20px; /* MODIFIÉ : Padding réduit (était 50px) */
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-title {
+    font-family: var(--font-family-headings);
+    font-size: 1.8em; /* MODIFIÉ : Taille réduite (était 2em) */
+    color: var(--primary-color);
+    margin-bottom: 20px; /* MODIFIÉ : Marge réduite (était 30px) */
+    margin-top: 0;
+}
+
+.footer-contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 50px; /* MODIFIÉ : Écart réduit */
+    margin-bottom: 25px; /* MODIFIÉ : Marge réduite (était 40px) */
+}
+
+.footer-contact-info a {
+    color: var(--text-color);
+    font-size: 1.0em; /* MODIFIÉ : Taille réduite (était 1.1em) */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-contact-info a:hover {
+    transform: translateY(-3px);
+    color: var(--primary-color);
+}
+
+.footer-contact-info a i {
+    color: var(--primary-color);
+    font-size: 1.3em; /* MODIFIÉ : Taille réduite (était 1.5em) */
+    transition: transform 0.3s ease;
+}
+.footer-contact-info a:hover i {
+    transform: scale(1.2);
+}
+
+.copyright {
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2em;
+    }
+
+    .main-nav li {
+        margin: 5px 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-bottom: 20px;
+    }
+
+    .profile-text {
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+    }
+
+    .accordion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .accordion-header::after {
+        align-self: flex-end; /* Place l'icône +/- à droite */
+        margin-top: -30px; /* Ajustement pour remonter l'icône */
+    }
+}
+
+/* NOUVEAU : Styles pour l'animation au scroll */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NOUVEAU : Styles pour le bouton Retour en Haut */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+    
+    /* Gère l'apparition/disparition */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-text .btn-view-project {
+    margin-top: 20px;
+    display: inline-flex; /* Permet d'aligner l'icône et le texte */
+    align-items: center;
+    gap: 10px;
+}
+
+/* NOUVEAU : Styles pour la section Stack Technique */
+.stack-section {
+    background-color: var(--darker-bg);
+}
+
+.stack-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.stack-item {
+    font-size: 4em; /* Taille de l'icône */
+    color: var(--secondary-text-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stack-item:hover {
+    transform: scale(1.2) translateY(-5px);
+    color: var(--primary-color);
+}
